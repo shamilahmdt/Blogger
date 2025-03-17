@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <section class="wrapper">
+            <div class="left">
+                <h1><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <div>
+                        <input type="search" placeholder="Search blog...">
+                        <img src="{% static 'images/search.png' %}" alt="search" />
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="{% url 'blo:index' %}">Home</a></li>
+                    <li><a href="{% url 'blo:create' %}">Create</a></li>
+                    <li><a href="{% url 'blo:account' %}">Account</a></li> 
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <section id="blog-details">
+        <section class="wrapper">
+            <div class="left">
+                <h1>{{ blog.title }}.</h1>
+                <p>{{ blog.description }}.</p>
+                <div>
+                    <p>{{ blog.author.user.first_name }} {{ blog.author.user.last_name }}</p>
+                    <p>{{ blog.date }}</p>
+                </div>
+                <img src="{{ blog.image.url }}" alt="blog">
+                <p>{{ blog.description_big }}</p>
+            </div>
+            <div class="right">
+                <h3>Recent Blogs</h3>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+</body>
+</html>
