@@ -71,8 +71,6 @@ def account(request):
 
 @login_required(login_url='login/')
 def edit(request,id):
-    user = request.user
-    author = Author.objects.get(user=user)
     categories = Category.objects.all()
     blogs = Blog.objects.get(id=id)
 
